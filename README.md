@@ -6,6 +6,7 @@ Basic Lexical and Syntax Analyzer for the following program:
 
 
 EBNF Rules:
+
 <program> ::= [<preprocessor>]  "int main()" {<block>}
 
 <preprocessor> ::= "#include <" <string> ">"
