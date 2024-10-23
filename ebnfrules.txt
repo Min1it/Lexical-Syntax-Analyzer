@@ -1,0 +1,52 @@
+EBNF
+
+<program> ::= [<preprocessor>]  "int main()" {<block>}
+
+<preprocessor> ::= "#include <" <string> ">"
+
+<statement> ::= assignmentStatement [";"]
+              | forLoop 
+              | printStatement [";"]
+	      | returnStatement [";"]
+	      | ifStatement
+              | comment
+
+<ifStatement> ::= "if(" <expression> ")" <block>
+
+<assignmentStatement> ::= ["int"] <identifier> "=" <expression>
+
+<expression> ::= <identifier> 
+| <number> [++] 
+| "{" { <expressionHelper> } "}" 
+| "sizeof(" <identifier> ")" 
+| <expression> <operators> <expression>
+
+<expressionHelper> ::= <number> | ","
+
+<printstatement> ::= "printf(" <string> ["," <expression> ] ")" 
+
+<forLoop> ::= "for(" <assignmentStatement> ";"  <expression> ";" <expression> ")" <block>
+
+<returnStatement> ::= "return" <expression>
+
+<identifier> ::= <letter> {<letter>|<digit>} ["[]"]
+
+<block> ::= "{" {<statement>} "}"
+
+
+<operators> ::= = | + | - | * | / | < | >
+
+<string> ::= {<char>}-
+
+<number> ::= {<digit>}-
+
+<char> ::= <letter> | <digit>
+
+<letter> ::= "a"..."z" | "A"..."Z"
+
+<digit> ::= "0"..."9"
+
+
+
+
+
