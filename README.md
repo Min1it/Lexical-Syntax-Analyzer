@@ -7,49 +7,49 @@ Basic Lexical and Syntax Analyzer for the following program:
 
 EBNF Rules:
 
-<program> ::= [<preprocessor>]  "int main()" {<block>}
+\<program\> ::= [\<preprocessor\>]  "int main()" {\<block\>}
 
-<preprocessor> ::= "#include <" <string> ">"
+\<preprocessor\> ::= "#include \<" \<string\> "\>"
 
-<statement> ::= assignmentStatement [";"]
+\<statement\> ::= assignmentStatement [";"]
               | forStatement 
               | printStatement [";"]
 	      | returnStatement [";"]
 	      | ifStatement
               | comment
 
-<ifStatement> ::= "if(" <expression> ")" <block>
+\<ifStatement\> ::= "if(" \<expression\> ")" \<block\>
 
-<assignmentStatement> ::= ["int"] <identifier> "=" <expression>
+\<assignmentStatement\> ::= ["int"] \<identifier\> "=" \<expression\>
 
-<expression> ::= <identifier> 
-| <number> [++] 
-| "{" { <expressionHelper> } "}" 
-| "sizeof(" <identifier> ")" 
-| <expression> <operators> <expression>
+\<expression\> ::= \<identifier\> 
+| \<number\> [++] 
+| "{" { \<expressionHelper\> } "}" 
+| "sizeof(" \<identifier\> ")" 
+| \<expression\> \<operators\> \<expression\>
 
-<expressionHelper> ::= <number> | ,
+\<expressionHelper\> ::= \<number\> | ,
 
-<printstatement> ::= "printf(" <string> ["," <expression> ] ")" 
+\<printstatement\> ::= "printf(" \<string\> ["," \<expression\> ] ")" 
 
-<forStatement> ::= "for(" <assignmentStatement> ";"  <expression> ";" <expression> ")" <block>
+\<forStatement\> ::= "for(" \<assignmentStatement\> ";"  \<expression\> ";" \<expression\> ")" \<block\>
 
-<returnStatement> ::= "return" <expression>
+\<returnStatement\> ::= "return" \<expression\>
 
-<identifier> ::= <letter> {<letter>|<digit>} ["[]"]
+\<identifier\> ::= \<letter\> {\<letter\>|\<digit\>} ["[]"]
 
 
-<operators> ::= = | + | - | * | / | < | >
+\<operators\> ::= = | + | - | * | / | \< | \>
 
-<string> ::= {<char>}-
+\<string\> ::= {\<char\>}-
 
-<number> ::= {<digit>}-
+\<number\> ::= {\<digit\>}-
 
-<char> ::= <letter> | <digit>
+\<char\> ::= \<letter\> | \<digit\>
 
-<letter> ::= "a"..."z" | "A"..."Z"
+\<letter\> ::= "a"..."z" | "A"..."Z"
 
-<digit> ::= "0"..."9"
+\<digit\> ::= "0"..."9"
 
 
 
