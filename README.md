@@ -1,4 +1,4 @@
-# Lexical-Syntax-Analyzer
+# Lexical/Syntax-Analyzer
 
 Basic Lexical and Syntax Analyzer for the following program:
 
